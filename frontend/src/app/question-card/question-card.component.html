@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    <h3>{{ title }}</h3>
+    <span class="status"
+      [class.assigned]="assignedTo">
+      {{ assignedTo ? ('Assigned to ' + assignedTo.name) : 'Unassigned' }}
+    </span>
+  </div>
+
+  <p class="description">{{ description }}</p>
+
+  <div class="actions">
+    <button class="btn assign" (click)="onAssign()">Assign</button>
+    <button class="btn edit" (click)="onEdit()">Edit</button>
+    <button class="btn delete" (click)="onDelete()">Delete</button>
+  </div>
+</div>
+
+<!-- ADD QUESTION (ADMIN ONLY)
+<button *ngIf="isAdmin" (click)="onAdd()">
+  Add Question
+</button>
+
+
+<div *ngFor="let q of questions">
+  <p>{{ q.question }}</p>
+
+  <button *ngIf="isAdmin" (click)="onEdit(q)">Edit</button>
+  <button *ngIf="isAdmin" (click)="onDelete(q.id)">Delete</button>
+</div> -->
+

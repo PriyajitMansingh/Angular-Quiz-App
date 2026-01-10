@@ -1,0 +1,22 @@
+<!-- <div class="app-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+<!-- Layout for logged-in users -->
+<div class="app-layout" *ngIf="auth.isLoggedIn(); else authPages">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- Layout for login / signup -->
+<ng-template #authPages>
+  <router-outlet></router-outlet>
+</ng-template>
+

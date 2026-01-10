@@ -1,0 +1,82 @@
+.sidebar {
+  width: 240px;
+  background: #111827;
+  color: white;
+  height: 100vh;
+}
+
+h1{
+  font-size: x-large;
+  font-weight: 100;
+}
+
+/* HEADER */
+.sidebar-header {
+  padding: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* MENU */
+.menu {
+  padding: 8px;
+}
+
+.menu-item {
+  margin: 5px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #00040a;
+  display: flex;
+  justify-content: space-between;
+  background-color: #374151;
+}
+
+.menu-item:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.menu-item.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* SUB MENU */
+.submenu {
+  padding-left: 12px;
+  margin-top: 4px;
+}
+
+.submenu-item {
+  margin: 5px;
+  margin-left: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #cbd5f5;
+  background-color: #374151;
+
+}
+
+.submenu-item:hover {
+  background: #1f2937;
+}
+
+.submenu-item.active {
+  background: #374151;
+  color: white;
+}
+
+
+.logout-btn{
+  border-radius: 5px;
+  background-color: burlywood;
+  cursor: pointer;
+  margin-top: 600px;
+}

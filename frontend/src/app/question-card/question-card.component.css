@@ -1,0 +1,97 @@
+/* CARD */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* STATUS BADGE */
+.status {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.status.assigned {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* DESCRIPTION */
+.description {
+  margin: 12px 0 20px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* BASE BUTTON */
+.btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* ASSIGN – GREEN */
+.btn.assign {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btn.assign:hover {
+  background-color: #16a34a;
+}
+
+/* EDIT – GRAY */
+.btn.edit {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn.edit:hover {
+  background-color: #4b5563;
+}
+
+/* DELETE – RED */
+.btn.delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn.delete:hover {
+  background-color: #dc2626;
+}

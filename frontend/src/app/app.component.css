@@ -1,0 +1,36 @@
+/* .app-layout {
+  display: flex;
+  height: 100vh;
+}*/
+
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  transition: all 0.3s ease;
+  background-color: aquamarine;
+} 
+
+
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  background-color: hsl(40, 18%, 97%);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background-color: #0f172a;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* MAIN CONTENT */
+.content {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+

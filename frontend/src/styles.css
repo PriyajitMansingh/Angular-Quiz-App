@@ -1,0 +1,65 @@
+/* ===== AUTH PAGES COMMON STYLES ===== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f3f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* container */
+.auth-container {
+  width: 350px;
+  margin: 100px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* heading */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* inputs */
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* button */
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #1e40af;
+}
+
+/* links */
+.auth-container p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.auth-container a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}

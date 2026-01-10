@@ -1,0 +1,42 @@
+
+<h1>Select Category and Subject</h1>
+<div class="menu">
+  <div *ngFor="let category of categories">
+
+   
+    <div
+      class="menu-item"
+      (click)="toggleCategory(category.id)"
+    >
+      {{ category.name }}
+      <span>
+        {{ openCategoryId === category.id ? '▾' : '▸' }}
+      </span>
+    </div>
+
+  
+    <div
+      class="submenu"
+      *ngIf="openCategoryId === category.id"
+    >
+      <div
+        class="submenu-item"
+        *ngFor="let subject of subjectsMap[category.id]"
+        [class.active]="selectedSubjectId === subject.id"
+        (click)="selectSubject(subject.id)"
+      >
+        {{ subject.name }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="logout" *ngIf="isLoggedIn">
+  <button class="logout-btn" (click)="logout()">
+    Logout
+  </button>
+</div>
+
