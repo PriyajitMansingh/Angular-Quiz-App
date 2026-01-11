@@ -16,33 +16,6 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-// login() {
-//   this.auth.login(this.email, this.password).subscribe({
-//     next: (res) => {
-//       this.auth.setSession(res.user);
-//       this.router.navigate(['/card-list']);
-
-//     },
-//     error: () => {
-//       alert('Invalid credentials');
-//     }
-//   });
-// }
-// login() {
-//   this.auth.login(this.email, this.password).subscribe({
-//     next: (res) => {
-//       // ✅ Save token received from backend
-//       this.auth.saveToken(res.token);
-
-//       // ✅ Redirect only if token exists
-//       this.router.navigate(['/card-list']);
-//     },
-//     error: () => {
-//       alert('Invalid credentials');
-//     }
-//   });
-// }
-
 login() {
   this.auth.login(this.email, this.password).subscribe({
     next: (res) => {
@@ -60,14 +33,10 @@ login() {
   });
 }
 
-
-
 ngOnInit() {
   if (this.auth.isLoggedIn()) {
     this.router.navigate(['/card-list']);
   }
 }
-
-
 
 }
