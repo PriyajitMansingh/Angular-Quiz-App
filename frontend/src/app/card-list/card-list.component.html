@@ -1,10 +1,10 @@
-
 <div *ngIf="currentQuestion">
-
   <!-- ADMIN ACTIONS (TOP) -->
   <div class="admin-actions" *ngIf="isAdmin">
     <button class="add-btn" (click)="toggleAddForm()">➕ Add</button>
-    <button class="delete-btn" (click)="onDelete(currentQuestion)">🗑 Delete</button>
+    <button class="delete-btn" (click)="onDelete(currentQuestion)">
+      🗑 Delete
+    </button>
   </div>
 
   <!-- QUESTION -->
@@ -15,10 +15,12 @@
     <div
       class="option"
       [ngClass]="{
-        correct: selectedOption &&
-                 currentQuestion.option_a === currentQuestion.correct_answer,
-        wrong: selectedOption === currentQuestion.option_a &&
-               selectedOption !== currentQuestion.correct_answer
+        correct:
+          selectedOption &&
+          currentQuestion.option_a === currentQuestion.correct_answer,
+        wrong:
+          selectedOption === currentQuestion.option_a &&
+          selectedOption !== currentQuestion.correct_answer
       }"
       (click)="selectOption(currentQuestion.option_a)"
     >
@@ -28,10 +30,12 @@
     <div
       class="option"
       [ngClass]="{
-        correct: selectedOption &&
-                 currentQuestion.option_b === currentQuestion.correct_answer,
-        wrong: selectedOption === currentQuestion.option_b &&
-               selectedOption !== currentQuestion.correct_answer
+        correct:
+          selectedOption &&
+          currentQuestion.option_b === currentQuestion.correct_answer,
+        wrong:
+          selectedOption === currentQuestion.option_b &&
+          selectedOption !== currentQuestion.correct_answer
       }"
       (click)="selectOption(currentQuestion.option_b)"
     >
@@ -41,10 +45,12 @@
     <div
       class="option"
       [ngClass]="{
-        correct: selectedOption &&
-                 currentQuestion.option_c === currentQuestion.correct_answer,
-        wrong: selectedOption === currentQuestion.option_c &&
-               selectedOption !== currentQuestion.correct_answer
+        correct:
+          selectedOption &&
+          currentQuestion.option_c === currentQuestion.correct_answer,
+        wrong:
+          selectedOption === currentQuestion.option_c &&
+          selectedOption !== currentQuestion.correct_answer
       }"
       (click)="selectOption(currentQuestion.option_c)"
     >
@@ -54,22 +60,22 @@
     <div
       class="option"
       [ngClass]="{
-        correct: selectedOption &&
-                 currentQuestion.option_d === currentQuestion.correct_answer,
-        wrong: selectedOption === currentQuestion.option_d &&
-               selectedOption !== currentQuestion.correct_answer
+        correct:
+          selectedOption &&
+          currentQuestion.option_d === currentQuestion.correct_answer,
+        wrong:
+          selectedOption === currentQuestion.option_d &&
+          selectedOption !== currentQuestion.correct_answer
       }"
       (click)="selectOption(currentQuestion.option_d)"
     >
       D. {{ currentQuestion.option_d }}
     </div>
   </div>
-
 </div>
 
 <!-- ADD QUESTION FORM -->
 <div class="add-form" *ngIf="showAddForm && isAdmin">
-
   <h3>Add New Question</h3>
 
   <input
@@ -114,14 +120,4 @@
     <button class="save-btn" (click)="submitQuestion()">Save</button>
     <button class="cancel-btn" (click)="toggleAddForm()">Cancel</button>
   </div>
-
 </div>
-
-
-
-
-
-
-
-
-

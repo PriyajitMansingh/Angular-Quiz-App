@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CardListComponent } from './card-list/card-list.component';
-import { QuestionCardComponent } from './question-card/question-card.component';
-import { AssignQuestionModalComponent } from './assign-question-modal/assign-question-modal.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -20,8 +18,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AppComponent,
     SidebarComponent,
     CardListComponent,
-    QuestionCardComponent,
-    AssignQuestionModalComponent,
     LoginComponent,
     SignupComponent,
     AddQuestionComponent

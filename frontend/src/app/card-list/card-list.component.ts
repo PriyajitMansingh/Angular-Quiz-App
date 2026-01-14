@@ -1,9 +1,7 @@
-
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SidebarService } from '../services/sidebar.service';
 import { QuestionService } from '../services/question.service';
 import { AuthService } from '../auth/auth.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-card-list',
@@ -11,10 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./card-list.component.css'],
 })
 export class CardListComponent implements OnInit, OnDestroy {
-
   //SUCCESS MESSAGE
   successMessage: string = '';
-
 
   // ===== DATA =====
   selectedSubjectId: string = '';
@@ -57,18 +53,13 @@ export class CardListComponent implements OnInit, OnDestroy {
     this.isAdmin = this.auth.isAdmin();
     console.log('IS ADMIN:', this.isAdmin);
 
-
     // listen to subject selection
-    this.sidebarService.selectedCategory$.subscribe(subjectId => {
+    this.sidebarService.selectedCategory$.subscribe((subjectId) => {
       if (!subjectId) return;
 
       this.selectedSubjectId = subjectId;
       this.loadQuestions(subjectId);
     });
-
-
-
-    
   }
 
   ngOnDestroy(): void {
@@ -89,7 +80,7 @@ export class CardListComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         console.error('Failed to load questions', err);
-      }
+      },
     });
   }
 
@@ -110,8 +101,7 @@ export class CardListComponent implements OnInit, OnDestroy {
     if (this.questions.length === 0) return;
 
     this.intervalId = setInterval(() => {
-      this.currentIndex =
-        (this.currentIndex + 1) % this.questions.length;
+      this.currentIndex = (this.currentIndex + 1) % this.questions.length;
 
       this.currentQuestion = this.questions[this.currentIndex];
       this.resetAnswerState();
@@ -125,8 +115,7 @@ export class CardListComponent implements OnInit, OnDestroy {
     if (this.selectedOption) return;
 
     this.selectedOption = option;
-    this.isCorrect =
-      option === this.currentQuestion.correct_answer;
+    this.isCorrect = option === this.currentQuestion.correct_answer;
   }
 
   resetAnswerState() {
@@ -140,15 +129,13 @@ export class CardListComponent implements OnInit, OnDestroy {
   onDelete(question: any) {
     this.questionService.deleteQuestion(question.id).subscribe({
       next: () => {
-        this.questions = this.questions.filter(
-          q => q.id !== question.id
-        );
+        this.questions = this.questions.filter((q) => q.id !== question.id);
         this.currentIndex = 0;
         this.setCurrentQuestion();
       },
       error: (err) => {
         console.error('Delete failed', err);
-      }
+      },
     });
   }
 
@@ -159,49 +146,45 @@ export class CardListComponent implements OnInit, OnDestroy {
     this.showAddForm = !this.showAddForm;
 
     //Auto-rotation pauses while typing
-      if (this.showAddForm && this.intervalId) {
-    clearInterval(this.intervalId);
-  }
+    if (this.showAddForm && this.intervalId) {
+      clearInterval(this.intervalId);
+    }
 
-  if (!this.showAddForm) {
-    this.startAutoChange();
-  }
+    if (!this.showAddForm) {
+      this.startAutoChange();
+    }
   }
 
   submitQuestion() {
     const payload = {
       subject_id: this.selectedSubjectId,
-      ...this.newQuestion
+      ...this.newQuestion,
     };
 
-     if (!this.selectedSubjectId) {
-    alert('No subject selected');
-    return;
-  }
+    if (!this.selectedSubjectId) {
+      alert('No subject selected');
+      return;
+    }
 
-      if (!this.newQuestion.question || !this.newQuestion.correct_answer) {
-    alert('Please fill all required fields');
-    return;
-  }
-
-  
+    if (!this.newQuestion.question || !this.newQuestion.correct_answer) {
+      alert('Please fill all required fields');
+      return;
+    }
 
     this.questionService.addQuestion(payload).subscribe({
       next: () => {
         this.loadQuestions(this.selectedSubjectId);
         this.showAddForm = false;
         this.resetForm();
-              this.successMessage = 'Question added successfully ✔️';
+        this.successMessage = 'Question added successfully ✔️';
 
-     
-      setTimeout(() => {
-        this.successMessage = '';
-      }, 3000);
-
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
       },
       error: (err) => {
         console.error('Add question failed', err);
-      }
+      },
     });
   }
 
@@ -216,7 +199,3 @@ export class CardListComponent implements OnInit, OnDestroy {
     };
   }
 }
-
-
-
-
